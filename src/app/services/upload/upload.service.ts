@@ -9,7 +9,7 @@ export class UploadService {
 
   useURL = "http://localhost:3000/insertData";
   headers = new Headers({
-    'Content-Type': 'application/json'
+    'Content-Type': 'application/x-www-form-urlencoded'
   })
 
   constructor(
@@ -28,16 +28,27 @@ export class UploadService {
 
   sendFeedback(formData) {
     console.log(formData);
-    let data = {
-      name : formData.name,
-      email : formData.email,
-      subject : formData.subject,
-      type: formData.type,
-      rating : formData.rating,
-      description : formData.desc,
-    }
-    // let urlsearchparams = new URLSearchParams();
-    return this._http.post("http://localhost:3000/feedback", data, {headers: this.headers})
+    // let data = {
+    //   name : formData.name,
+    //   email : formData.email,
+    //   subject : formData.subject,
+    //   type: formData.type,
+    //   rating : formData.rating,
+    //   description : formData.desc,
+    // }
+    let urlsearchparams = new URLSearchParams();
+    urlsearchparams.append("name", formData.name);
+    urlsearchparams.append("email", formData.email);
+    urlsearchparams.append("subject", formData.subject);
+    urlsearchparams.append("type", formData.type);
+    urlsearchparams.append("rating", formData.rating);
+    urlsearchparams.append("description", formData.desc);
+    
+    let body = urlsearchparams.toString();
+
+    console.log(body);
+
+    return this._http.post("http://localhost:3000/feedback", body, {headers: this.headers})
       .toPromise()
       .then(res => res.json())
       .catch((err) => {

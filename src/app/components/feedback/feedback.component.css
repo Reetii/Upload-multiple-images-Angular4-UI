@@ -1,4 +1,11 @@
+
 .rating-group button{
     margin-left: -4px;
     border-radius: 0px;
+}
+
+
+.feedback{
+  margin:0 auto;
+  width:90%;
 }

@@ -4,3 +4,7 @@
 .btn {
     border-radius: 2px;
 }
+
+select.form-control:not([size]):not([multiple]) {
+    height: 100%;
+}

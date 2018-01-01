@@ -1,4 +1,44 @@
-<app-main></app-main>
-<br><br>
-<app-feedback></app-feedback>
+<div class="wrapper">
+            <!-- Sidebar Holder -->
+            <nav id="sidebar">
+                <div class="sidebar-header">
+                    <h3>Business Module</h3>
+                </div>
 
+                <ul class="list-unstyled components">
+                    <li class="active">
+                        <a routerLink="/" aria-expanded="false">Add a question</a>
+
+                    </li>
+                    <li>
+                        <a href="/aboutus" aria-expanded="false">About us</a>
+
+                    </li>
+                    <li>
+                        <a href="/feedback" aria-expanded="false">Give us feedback</a>
+                    </li>
+
+                </ul>
+
+
+            </nav>
+
+            <!-- Page Content Holder -->
+            <div id="content">
+
+              <router-outlet></router-outlet>
+        </div>
+
+
+
+
+
+
+         <script type="text/javascript">
+             $(document).ready(function () {
+                 $('#sidebarCollapse').on('click', function () {
+                     $('#sidebar').toggleClass('active');
+                     $(this).toggleClass('active');
+                 });
+             });
+         </script>

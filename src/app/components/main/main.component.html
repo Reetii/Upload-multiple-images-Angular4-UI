@@ -1,26 +1,34 @@
-<h2>Business Module Prototype</h2>
+<h2>Add a question</h2>
+<br>
 <table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Input</th>
-      <th></th>
-    </tr>
-  </thead>
+
   <tbody>
     <tr>
-      <td>Text</td>
-      <td> 
-        <input type="text" #text id=""> 
+      <td>
+        <div class="form-group">
+          <label for="exampleTextarea">Enter text here:</label>
+      <textarea class="form-control" #text id="" rows="3"></textarea>
+    </div>
+    <br>
       </td>
       <td></td>
     </tr>
     <tr>
-      <td>Image</td>
       <td>
-        <input type="file" accept='image/*' multiple='multiple' name="" id="images"> 
+        <div class="form-group">
+      <label for="exampleInputFile">Add a image</label>
+      <input type="file" accept='image/*' multiple='multiple' name="" class="form-control-file" id="image" aria-describedby="fileHelp">
+      <small id="fileHelp" class="form-text text-muted">Want to add more images? Click 'Add more'.</small>
+    </div>
       </td>
       <td><button (click)="onClicked(text)">Add More</button></td>
+    </tr>
+    <tr>
+      <td>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+
+      </td>
     </tr>
   </tbody>
 </table>

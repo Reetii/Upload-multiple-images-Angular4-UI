@@ -1,0 +1,25 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+  <h1> Why RG Academy?</h1>
+   </div>
+ </div>
+<br/>
+<div *ngFor="let item of items">
+<div class="row">
+<div class="col-md-12">
+<h4>{{item.title}}</h4>
+</div>
+</div>
+<br><br>
+<div class="row">
+  <div class="col-md-3">
+    <img src={{item.imageURL}} class="img-responsive" alt="">
+</div>
+<div class="col-md-9">
+  <p>{{item.description}}</p>
+</div>
+
+</div>
+<br><br>
+</div>
